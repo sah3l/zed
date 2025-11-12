@@ -1,29 +1,20 @@
-import Hero from "../components/Hero";
-import Link from "next/link";
+# 1) Clone & branch
+git clone https://github.com/sah3l/zed
+cd zed
+git checkout -b feature/pinterest-ui
 
-export default function Page() {
-  return (
-    <div className="space-y-12">
-      <Hero />
-      <section className="grid md:grid-cols-2 gap-6">
-        <div className="rounded-3xl bg-zedPink/15 p-8">
-          <h2 className="text-2xl font-semibold">🌿 The Natural Collection</h2>
-          <p className="mt-2">Breathable classics made to last — cotton, linen, silk.</p>
-          <Link className="mt-4 inline-block underline" href="/shop">Explore the Collection</Link>
-        </div>
-        <div className="rounded-3xl bg-zedOlive/20 p-8">
-          <h2 className="text-2xl font-semibold">🍃 The Organic Collection</h2>
-          <p className="mt-2">Planet-kind and ultra-soft — bamboo cotton & banana fibre.</p>
-          <Link className="mt-4 inline-block underline" href="/shop">Explore the Collection</Link>
-        </div>
-      </section>
-      <section className="rounded-3xl bg-white p-8">
-        <h2 className="text-2xl font-semibold">🐰 Meet the Bunny</h2>
-        <p className="mt-2 max-w-2xl">
-          Our shy, peeking bunny is the heart of ZED — a symbol of stillness, softness, and a little whimsy.
-        </p>
-        <Link className="mt-4 inline-block underline" href="/about#bunny">The story behind the bunny →</Link>
-      </section>
-    </div>
-  );
-}
+# 2) Unzip the new page into your repo root (it will create /app/page.tsx)
+unzip ~/Downloads/zed_pinterest_ui.zip -d .
+# (If you're on Windows, just drag `app/page.tsx` into the repo folder, replacing the file.)
+
+# 3) Install & test locally
+npm install
+npm run dev
+
+# 4) Commit & push
+git add app/page.tsx
+git commit -m "feat(ui): Pinterest-style home with themes, save, search, modal, infinite scroll"
+git push -u origin feature/pinterest-ui
+
+# 5) (Optional) Open a PR with GitHub CLI
+# gh pr create --fill --title "Pinterest-style UI" --body "Girly masonry feed, themes, save, search, modal, infinite scroll."
